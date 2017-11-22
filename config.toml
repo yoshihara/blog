@@ -3,6 +3,7 @@ languageCode = "en"
 title = "hyoshi(hara) log"
 theme = "kiss"
 copyright = "&copy; <a href=\"https://github.com/yoshihara\">yoshihara</a> 2017"
+publishDir = "docs"
 googleAnalytics = ""
 # Number of posts per page
 Paginate = 5
