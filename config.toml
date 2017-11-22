@@ -16,7 +16,7 @@ Paginate = 5
 [params.info]
 adsense = "" # Adsense ID (ID only, without ca-pub-)
 enableSocial = true # Adds OpenGraph and Twitter cards
-homeTitle = "" # Title for home page
+homeTitle = "hyoshi(hara) log" # Title for home page
 poweredby = true # Adds powered by hugo and kiss below Copyright
 
 
