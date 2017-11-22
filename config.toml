@@ -5,6 +5,7 @@ theme = "kiss"
 copyright = "&copy; <a href=\"https://github.com/yoshihara\">yoshihara</a> 2017"
 publishDir = "public"
 googleAnalytics = ""
+enableRobotsTXT = true
 # Number of posts per page
 Paginate = 5
 # enableRobotsTXT = true
