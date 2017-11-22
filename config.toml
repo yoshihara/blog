@@ -1,4 +1,4 @@
-baseurl = "https://example.com"
+baseurl = "https://yoshihara.github.io/blog"
 languageCode = "en"
 title = "hyoshi(hara) log"
 theme = "kiss"
