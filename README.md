@@ -4,6 +4,8 @@
 
 https://github.com/yoshihara/yoshihara.github.io
 
+`public/` directory is the submodule for this repository and contains the files rendered for website.
+
 ## dependency
 
 - go version go1.8.3 linux/amd64
