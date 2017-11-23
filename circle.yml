@@ -25,6 +25,7 @@ deployment:
       - git config --global user.name "yoshihara at CircleCI"
       - git config --global user.email "yoshihara@users.noreply.github.com"
       - git submodule update -i
+      - ./bin/replace_created_at.sh
       - hugo
       - git --git-dir=${ROOT_PATH}/public/.git add --all :/
       - git --git-dir=${ROOT_PATH}/public/.git commit -m "Update by CircleCI"
