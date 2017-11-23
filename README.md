@@ -1,5 +1,7 @@
 # blog
 
+[![CircleCI](https://circleci.com/gh/yoshihara/blog.svg?style=svg)](https://circleci.com/gh/yoshihara/blog)
+
 ## public repository
 
 https://github.com/yoshihara/yoshihara.github.io
