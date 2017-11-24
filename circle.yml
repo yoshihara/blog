@@ -7,7 +7,6 @@ machine:
     ROOT_PATH: "${GOPATH}/src/github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}"
 dependencies:
   override:
-    - echo ${GOPATH}
     - mkdir -p ${GOPATH}/src/github.com/${CIRCLE_PROJECT_USERNAME}
     - ln -s ${HOME}/${CIRCLE_PROJECT_REPONAME} ${ROOT_PATH}
     - go get -u github.com/kardianos/govendor
@@ -25,8 +24,9 @@ deployment:
       - git config --global user.name "yoshihara at CircleCI"
       - git config --global user.email "yoshihara@users.noreply.github.com"
       - git submodule update -i
+      - git --git-dir=${ROOT_PATH}/public/.git checkout master
       - ./bin/replace_created_at.sh
       - hugo
-      - git --git-dir=${ROOT_PATH}/public/.git add --all :/
+      - git submodule foreach git add --all :/
       - git --git-dir=${ROOT_PATH}/public/.git commit -m "Update by CircleCI"
-      - git --git-dir=${ROOT_PATH}/public/.git push --force-with-lease origin HEAD:master
+      - git push --recurse-submodules=on-demand
