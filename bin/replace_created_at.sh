@@ -5,4 +5,10 @@ set -eux
 FILE=`git show HEAD --diff-filter=AM --name-only --pretty=format:''`
 if [ "${FILE##*.}" = "md" ]; then # 左端からパターンマッチする最長を除外
   sed -i s/\^created_at:/date:/ ${FILE}
+  md=`echo ${FILE} | sed s/.html.md$/.md/`
+  if [ "${FILE}" != "${md}" ]; then
+    git mv ${FILE} ${md}
+    git add ${md}
+    git commit -m "tweak & Rename ${FILE}"
+  fi
 fi
