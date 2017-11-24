@@ -1,6 +1,5 @@
 machine:
   environment:
-    # GOROOT is not set by default
     GOROOT: ""
     PATH: "/usr/local/go/bin:~/.go_workspace/bin:${PATH}"
     GOPATH: "${HOME}/.go_workspace"
@@ -27,6 +26,7 @@ deployment:
       - git --git-dir=${ROOT_PATH}/public/.git checkout master
       - ./bin/replace_created_at.sh
       - hugo
-      - git submodule foreach git add --all :/
+      - git --git-dir=${ROOT_PATH}/public/.git add --all
       - git --git-dir=${ROOT_PATH}/public/.git commit -m "Update by CircleCI"
+      - git --git-dir=${ROOT_PATH}/public/.git push origin master
       - git push --recurse-submodules=on-demand
