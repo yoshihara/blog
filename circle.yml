@@ -29,4 +29,6 @@ deployment:
       - git --git-dir=${ROOT_PATH}/public/.git add --all
       - git --git-dir=${ROOT_PATH}/public/.git commit -m "Update by CircleCI"
       - git --git-dir=${ROOT_PATH}/public/.git push origin master
+      - git add public
+      - git commit -m "Update public"
       - git push --recurse-submodules=on-demand
