@@ -7,9 +7,6 @@ if [ "${FILE##*.}" = "md" ]; then # 左端からパターンマッチする最�
   sed -i s/\^created_at:/date:/ ${FILE}
   md=`echo ${FILE} | sed s/.html.md$/.md/`
   if [ "${FILE}" != "${md}" ]; then
-    if [ -e ${md} ]; then
-      git rm ${md}
-    fi
     mv ${FILE} ${md}
   fi
 fi
