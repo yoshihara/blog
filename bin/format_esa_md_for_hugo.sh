@@ -10,8 +10,6 @@ if [ "${FILE##*.}" = "md" ]; then # 左端からパターンマッチする最�
     if [ -e ${md} ]; then
       git rm ${md}
     fi
-    git mv ${FILE} ${md}
-    git add ${md}
-    git commit -m "tweak & Rename ${FILE}"
+    mv ${FILE} ${md}
   fi
 fi
