@@ -1,12 +1,10 @@
 #!/bin/bash
 
 # esaのfrontmatterはcreated_at/updated_atだが、hugoが認識できるのはdateなのでcreated_atをdateに置き換える
+# ファイル名にある ".html" というのを除いたblog.bomberowl.org/posts/#{id}/ というURLにしたいのでファイル名を変更している。
 set -eux
-FILE=`git show HEAD --diff-filter=AM --name-only --pretty=format:''`
-if [ "${FILE##*.}" = "md" ]; then # 左端からパターンマッチする最長を除外
-  sed -i s/\^created_at:/date:/ ${FILE}
-  md=`echo ${FILE} | sed s/.html.md$/.md/`
-  if [ "${FILE}" != "${md}" ]; then
-    mv ${FILE} ${md}
-  fi
-fi
+for file in `find ./content/posts/ -name "*.html.md"` ;do
+  sed -i s/\^created_at:/date:/ ${file}
+  md=`echo ${file} | sed s/.html.md$/.md/`
+  mv ${file} ${md}
+done
