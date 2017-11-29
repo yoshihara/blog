@@ -20,16 +20,6 @@ deployment:
   production:
     branch: master
     commands:
-      - git config --global user.name "yoshihara at CircleCI"
-      - git config --global user.email "yoshihara@users.noreply.github.com"
-      - git submodule update -i
-      - git --git-dir=${ROOT_PATH}/public/.git checkout master
       - ./bin/format_esa_md_for_hugo.sh
       - hugo
-      - git --git-dir=${ROOT_PATH}/public/.git add --all
-      - git --git-dir=${ROOT_PATH}/public/.git commit -m "Update by CircleCI"
-      - git --git-dir=${ROOT_PATH}/public/.git push origin master
-      - git add public
-      - git commit -m "Update public [ci skip]"
-      - git push --recurse-submodules=on-demand
       - aws s3 sync public s3://blog.bomberowl.org/ --delete
