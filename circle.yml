@@ -32,3 +32,4 @@ deployment:
       - git add public
       - git commit -m "Update public [ci skip]"
       - git push --recurse-submodules=on-demand
+      - aws s3 sync public s3://blog.bomberowl.org/ --delete
