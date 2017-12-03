@@ -20,6 +20,7 @@ deployment:
   production:
     branch: master
     commands:
+      - rm -rf public/*
       - git submodule update -i
       - ./bin/format_esa_md_for_hugo.sh
       - hugo
