@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # esaのfrontmatterはcreated_at/updated_atだが、hugoが認識できるのはdateなのでcreated_atをdateに置き換える
-# ファイル名にある ".html" というのを除いたblog.bomberowl.org/posts/#{id}/ というURLにしたいのでファイル名を変更している。
+# ファイル名にある ".html" というのを除いたblog.bomberowl.org/posts/#{id}/ というURLにしたいのでファイル名を変更している
 set -eux
 for file in `find ./content/posts/ -name "*.html.md"` ;do
   sed -i s/\^created_at:/date:/ ${file}
