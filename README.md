@@ -31,8 +31,6 @@ See circle.yml
 $ hugo
 ```
 
-```
-
 ## for check in local
 
 ```sh
