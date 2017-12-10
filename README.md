@@ -2,20 +2,30 @@
 
 [![CircleCI](https://circleci.com/gh/yoshihara/blog.svg?style=svg)](https://circleci.com/gh/yoshihara/blog)
 
-## public repository
+https://github.com/yoshihara/blog
 
-https://github.com/yoshihara/yoshihara.github.io
+## used AWS Services
 
-`public/` directory is the submodule for this repository and contains the files rendered for website.
+- Amazon S3
+- CloudFront
+- Route53
+- Certificate Manager
+
+## used Other Services
+
+- [esa.io](https://esa.io): create posts
+- [CircleCI](https://circleci.com): Deploy
 
 ## dependency
 
 - go version go1.8.3 linux/amd64
-- Hugo Static Site Generator v0.32-DEV linux/amd64 BuildDate: 2017-11-22T21:01:53+09:00
+- [Hugo](http://gohugo.io/) v0.32
 
-## memo
+## deploy
 
-### build
+See circle.yml
+
+## build site
 
 ```sh
 $ hugo
@@ -23,7 +33,7 @@ $ hugo
 
 ```
 
-### for check in local
+## for check in local
 
 ```sh
 $ hugo server -D
