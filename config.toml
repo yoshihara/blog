@@ -1,5 +1,6 @@
 baseurl = "https://blog.bomberowl.org"
-languageCode = "en"
+languageCode = "ja"
+HasCJKLanguage = true
 title = "hyoshi(hara) log"
 theme = "kiss"
 copyright = "&copy; <a href=\"https://github.com/yoshihara\">yoshihara</a> 2017"
