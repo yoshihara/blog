@@ -3,6 +3,7 @@
 [![CircleCI](https://circleci.com/gh/yoshihara/blog.svg?style=svg)](https://circleci.com/gh/yoshihara/blog)
 
 https://github.com/yoshihara/blog
+https://blog.bomberowl.org
 
 ## used AWS Services
 
@@ -18,10 +19,13 @@ https://github.com/yoshihara/blog
 
 ## dependency
 
-- go version go1.8.3 linux/amd64
-- [Hugo](http://gohugo.io/) v0.32
+- [Hugo](http://gohugo.io/) v0.37.1
 
 ## deploy
+
+See circle.yml
+
+## Install
 
 See circle.yml
 
