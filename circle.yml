@@ -1,17 +1,9 @@
-machine:
-  environment:
-    GOROOT: ""
-    PATH: "/usr/local/go/bin:~/.go_workspace/bin:${PATH}"
-    GOPATH: "${HOME}/.go_workspace"
-    ROOT_PATH: "${GOPATH}/src/github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}"
 dependencies:
   override:
-    - mkdir -p ${GOPATH}/src/github.com/${CIRCLE_PROJECT_USERNAME}
-    - ln -s ${HOME}/${CIRCLE_PROJECT_REPONAME} ${ROOT_PATH}
-    - go get -u github.com/kardianos/govendor
-    - govendor get github.com/gohugoio/hugo
-    - go install github.com/gohugoio/hugo
-
+    - mkdir -p ${HOME}/src/github.com/${CIRCLE_PROJECT_USERNAME}
+    - cd ${HOME}/src/github.com/${CIRCLE_PROJECT_USERNAME}
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.37.1/hugo_0.37.1_Linux-64bit.tar.gz
+    - tar xvf hugo_0.37.1_Linux-64bit.tar.gz
 test:
   override:
     - echo "no test"
@@ -23,5 +15,5 @@ deployment:
       - rm -rf public/*
       - git submodule update -i
       - ./bin/format_esa_md_for_hugo.sh
-      - hugo
+      - ./hugo
       - aws s3 sync public s3://blog.bomberowl.org/ --delete
