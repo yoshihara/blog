@@ -2,8 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/yoshihara/blog.svg?style=svg)](https://circleci.com/gh/yoshihara/blog)
 
-https://github.com/yoshihara/blog
-https://blog.bomberowl.org
+- https://github.com/yoshihara/blog
+- https://blog.bomberowl.org
 
 ## used AWS Services
 
