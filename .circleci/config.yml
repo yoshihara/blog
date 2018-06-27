@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: install awscli
-          command: apt-get update && apt-get install -y awscli
+          command: sudo apt-get update && sudo apt-get install -y awscli
 
       - restore_cache:
           keys:
