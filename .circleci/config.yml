@@ -23,13 +23,7 @@ jobs:
             wget https://github.com/gohugoio/hugo/releases/download/v0.37.1/hugo_0.37.1_Linux-64bit.tar.gz
             tar xvf hugo_0.37.1_Linux-64bit.tar.gz
 
-      - run:
-          name: export environment variables
-          command: |
-            export AWS_ACCESS_KEY_ID
-            export AWS_DEFAULT_REGION
-            export AWS_SECRET_ACCESS_KEY
-
+      # awscliに必要な認証はCircleCIのBUILD SETTINGS > Environment Variables で設定している
       - run:
           name: build and upload
           command: |
