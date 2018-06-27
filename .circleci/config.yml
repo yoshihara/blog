@@ -23,13 +23,25 @@ jobs:
             wget https://github.com/gohugoio/hugo/releases/download/v0.37.1/hugo_0.37.1_Linux-64bit.tar.gz
             tar xvf hugo_0.37.1_Linux-64bit.tar.gz
 
-      # awscliに必要な認証はCircleCIのBUILD SETTINGS > Environment Variables で設定している
       - run:
-          name: build and upload
+          name: pull template
           command: |
             git submodule update -i
+
+      - run:
+          name: tweak frontmatter for hugo
+          command: |
             ./bin/format_esa_md_for_hugo.sh
+
+      - run:
+          name: generate
+          command: |
             ./hugo
+
+      # awscliに必要な認証はCircleCIのBUILD SETTINGS > Environment Variables で設定している
+      - run:
+          name: upload S3
+          command: |
             aws s3 sync public s3://blog.bomberowl.org/ --delete
 
       - save_cache:
