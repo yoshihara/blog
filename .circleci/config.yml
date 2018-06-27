@@ -24,6 +24,13 @@ jobs:
             tar xvf hugo_0.37.1_Linux-64bit.tar.gz
 
       - run:
+          name: export environment variables
+          command: |
+            export AWS_ACCESS_KEY_ID
+            export AWS_DEFAULT_REGION
+            export AWS_SECRET_ACCESS_KEY
+
+      - run:
           name: build and upload
           command: |
             rm -rf public/*
