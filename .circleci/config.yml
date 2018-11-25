@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       # CircleCI Go images available at: https://hub.docker.com/r/circleci/golang/
-      - image: circleci/golang:1.8
+      - image: circleci/golang:1.11
 
     working_directory: /go/src/github.com/yoshihara/blog
 
@@ -15,13 +15,13 @@ jobs:
 
       - restore_cache:
           keys:
-            - hugo-0.37.1
+            - hugo-0.51
 
       - run:
           name: install hugo
           command: |
-            wget https://github.com/gohugoio/hugo/releases/download/v0.37.1/hugo_0.37.1_Linux-64bit.tar.gz
-            tar xvf hugo_0.37.1_Linux-64bit.tar.gz
+            wget https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.tar.gz
+            tar xvf hugo_0.51_Linux-64bit.tar.gz
 
       - run:
           name: pull template
@@ -45,6 +45,6 @@ jobs:
             aws s3 sync public s3://blog.bomberowl.org/ --delete
 
       - save_cache:
-          key: hugo-0.37.1
+          key: hugo-0.51
           paths:
             - "./hugo"

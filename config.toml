@@ -19,8 +19,10 @@ enableSocial = true # Adds OpenGraph and Twitter cards
 homeTitle = "hyoshi(hara) log" # Title for home page
 poweredby = true # Adds powered by hugo and kiss below Copyright
 
-
 [params.social]
 
 twitter = "hyoshihara04"
 github = "yoshihara"
+
+[params.social.config]
+platforms = ["github","twitter"]
