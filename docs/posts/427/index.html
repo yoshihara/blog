@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>xremapをsystemctlで自動起動するメモ | hyoshi(hara) log</title>
+
+<meta property='og:title' content='xremapをsystemctlで自動起動するメモ - hyoshi(hara) log'>
+<meta property='og:description' content='xremapを使ってemacs以外（というかslackとchromium）でemacsバインディングで操作できるようにしています。めんどくさ'>
+<meta property='og:url' content='https://blog.bomberowl.org/posts/427/'>
+<meta property='og:site_name' content='hyoshi(hara) log'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2018-10-06T13:55:27&#43;09:00'/><meta property='article:modified_time' content='2018-10-06T13:55:27&#43;09:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hyoshihara04'><meta name='twitter:creator' content='@hyoshihara04'>
+<link rel="icon" href="https://blog.bomberowl.org/favicon.ico"/>
+<link rel="stylesheet" href="https://blog.bomberowl.org/css/style.css"/></head>
+<body>
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.bomberowl.org">
+          <h1 class="title is-4">hyoshi(hara) log</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/yoshihara'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/hyoshihara04'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+    </div>
+    <h2 class="subtitle is-6">October 6, 2018</h2>
+    <h1 class="title">xremapをsystemctlで自動起動するメモ</h1>
+    
+    <div class="content">
+      
+
+<p><a href="https://github.com/k0kubun/xremap">xremap</a>を使ってemacs以外（というかslackとchromium）でemacsバインディングで操作できるようにしています。めんどくさがって毎回ターミナルで実行していたのですが、起動忘れていてイライラしたりしたのでsystemctl使って勝手に起動するようにしました。といいつつsystemctl詳しくないので調べて多分こうだろうで動かしたら上手くいったものになります。
+色々試行錯誤したのでいらないコマンドとか混ざってるかもですが後々何したか思い出せるようにメモしました。</p>
+
+<h2 id="環境">環境</h2>
+
+<p>17.10で最初やったけど今は↓でもちゃんと動いています。</p>
+
+<pre><code class="language-console">$ cat /etc/lsb-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION=&quot;Ubuntu 18.04.1 LTS&quot;
+</code></pre>
+
+<h2 id="xremapをmakeしてinstall">xremapをmakeしてinstall</h2>
+
+<p>xremapをcloneしたディレクトリで以下を実行すると、 <code>/usr/local/bin</code> に <code>xremap</code> の実行ファイルが設置されます。（場所を変えたい場合はDISTDIR指定すればよさそう）</p>
+
+<pre><code class="language-console">$ make
+$ sudo make install
+</code></pre>
+
+<h2 id="ユニット定義ファイル">ユニット定義ファイル</h2>
+
+<p>以下のファイルを <code>~/.config/systemd/user/xremap.service</code> に置きます。（ディレクトリがない場合はあらかじめ作る）</p>
+
+<pre><code class="language-~/.config/systemd/user/xremap.service">[Unit]
+Description=xremap
+
+[Service]
+KillMode=process
+ExecStart=/usr/local/bin/xremap /path/to/xremap_config.rb
+ExecStop=/usr/bin/killall xremap
+Restart=always
+
+[Install]
+WantedBy=default.target
+</code></pre>
+
+<h3 id="ユニット定義ファイルのメモ">ユニット定義ファイルのメモ</h3>
+
+<ul>
+<li><code>ExecStart</code> / <code>ExecStop</code> は絶対パスで書く</li>
+<li><code>/etc/systemd/</code> の下にユニット定義ファイルをおくシステムレベルでは動かない（ <code>xremap</code> がX serverに接続できなかった的なエラーが出て動かない）</li>
+<li><code>WantedBy</code> は <code>default.target</code> でないと動かない（システムレベルでは <code>multi-user.target</code> がデフォみたいなのをどこかで見たけど今回はユーザレベルなのでまあそうかという感じ）</li>
+</ul>
+
+<h2 id="サービス実行と自動起動設定">サービス実行と自動起動設定</h2>
+
+<pre><code class="language-console">$ systemctl --user daemon-reload
+$ systemctl --user start xremap
+$ systemctl --user enable xremap
+</code></pre>
+
+<p>ユニット定義ファイルを書き換えた場合には <code>daemon-reload</code> が必要です。新規で追加した場合は必要なのかわからないのですが、やったからといって問題があるわけではなさそう。
+<code>xremap</code> に渡す設定ファイルを書き換えた場合は <code>systemctl --user restart xremap</code> します。</p>
+
+<h2 id="systemctlのログの確認">systemctlのログの確認</h2>
+
+<p><code>journalctl -f</code> すると <code>tail -f</code> した形でログが流れます。ログファイルそのものは <code>/var/log/journal/</code> 配下にありますがバイナリなので、 <code>journalctl</code> コマンドを使います。</p>
+
+<h2 id="参考資料">参考資料</h2>
+
+<ul>
+<li><a href="https://qiita.com/sinsengumi/items/24d726ec6c761fc75cc9">systemctl コマンド</a></li>
+<li><a href="https://kernhack.hatenablog.com/entry/2016/05/05/114633">systemdでユーザー固有のunitを動かす</a></li>
+</ul>
+
+<h2 id="ついで-xremapの設定ファイル">（ついで）xremapの設定ファイル</h2>
+
+<p><a href="https://github.com/k0kubun/xremap/blob/8415b8058a9c6a8d3f5ebbd2810201b70113091a/examples/emacs_like.rb">公式のサンプル</a> をちょっと書き換えたものになります。私の環境だとemacsの名前（inspectした値）が <code>emacs25</code> にならずRubyのObjectのinspectそのままになってしまい困っていたのですが、考えたらemacsと端末とchromiumとslack以外はUbuntuでほぼ使わないので、chromiumとslackでだけ有効化するようにしました（なんで <code>emacs25</code> じゃなくなったのかちょっとコード追ったりしたんだけどたぶんX側の都合のような気がするのでよくわからなかった&hellip;。）</p>
+
+<pre><code class="language-rb">window class_only: ['slack', 'chromium-browser'] do
+  # emacs-like bindings
+  remap 'C-b', to: 'Left'
+  remap 'C-f', to: 'Right'
+  remap 'C-p', to: 'Up'
+  remap 'C-n', to: 'Down'
+
+  remap 'M-b', to: 'Ctrl-Left'
+  remap 'M-f', to: 'Ctrl-Right'
+
+  remap 'C-a', to: 'Home'
+  remap 'C-e', to: 'End'
+
+  remap 'C-k', to: ['Shift-End', 'Ctrl-x']
+
+  remap 'C-d', to: 'Delete'
+  remap 'C-h', to: 'BackSpace'
+  remap 'M-d', to: 'Ctrl-Delete'
+
+  remap 'M-w', to: 'Ctrl-c'
+  remap 'C-y', to: 'Ctrl-v'
+  remap 'C-w', to: 'Ctrl-x'
+
+  remap 'C-v', to: 'Page_Down'
+  remap 'M-v', to: 'Page_Up'
+
+  remap 'C-s', to: 'Ctrl-f'
+
+  # actually these are vim insert mode bindings, but compatible with shell
+  remap 'C-u', to: ['Shift-Home', 'Ctrl-x']
+
+  remap 'C-m', to: 'Return'
+  remap 'C-j', to: 'Return'
+end
+</code></pre>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+<div class="container has-text-right">
+
+<div class="addthis_inline_share_toolbox"></div>
+</div>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://github.com/yoshihara">yoshihara</a> 2017-2018</p>
+    
+      <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
+    
+  </div>
+</section>
+
+
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a4ac93ed1b0ded1"></script>
+
+</body>
+</html>
+
