@@ -4,7 +4,7 @@ HasCJKLanguage = true
 title = "hyoshi(hara) log"
 theme = "kiss"
 copyright = "&copy; <a href=\"https://github.com/yoshihara\">yoshihara</a> 2017-2018"
-publishDir = "doc"
+publishDir = "docs"
 googleAnalytics = ""
 enableRobotsTXT = true
 # Number of posts per page
