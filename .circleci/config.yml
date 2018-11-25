@@ -9,9 +9,6 @@ jobs:
 
     steps:
       - checkout
-      - run:
-          name: install awscli
-          command: sudo apt-get update && sudo apt-get install -y awscli
 
       - restore_cache:
           keys:
@@ -37,12 +34,6 @@ jobs:
           name: generate
           command: |
             ./hugo
-
-      # awscliに必要な認証はCircleCIのBUILD SETTINGS > Environment Variables で設定している
-      - run:
-          name: upload S3
-          command: |
-            aws s3 sync public s3://blog.bomberowl.org/ --delete
 
       - save_cache:
           key: hugo-0.51
