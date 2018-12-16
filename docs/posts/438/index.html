@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <title>esaで日報カテゴリとかで前後の日にちの記事を見やすくするchrome拡張を作った | hyoshi(hara) log</title>
+    
+    <meta property='og:title' content='esaで日報カテゴリとかで前後の日にちの記事を見やすくするchrome拡張を作った - hyoshi(hara) log'>
+<meta property='og:description' content='会社ではesaで 日報/yyyy/mm/dd/誰それ みたいな感じのカテゴリで日報を書いています。が、「あれ、昨日の日報何書いたっけ？」みたいに'>
+<meta property='og:url' content='https://blog.bomberowl.org/posts/438/'>
+<meta property='og:site_name' content='hyoshi(hara) log'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2018-12-16T22:40:49&#43;09:00'/><meta property='article:modified_time' content='2018-12-16T22:40:49&#43;09:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hyoshihara04'><meta name='twitter:creator' content='@hyoshihara04'>
+    
+    <link rel="stylesheet" href="/css/style.css"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.bomberowl.org">
+          <h1 class="title is-4">hyoshi(hara) log</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/yoshihara'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/hyoshihara04'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+    </div>
+    <h2 class="subtitle is-6">December 16, 2018</h2>
+    <h1 class="title">esaで日報カテゴリとかで前後の日にちの記事を見やすくするchrome拡張を作った</h1>
+    
+    <div class="content">
+      
+
+<p>会社ではesaで <code>日報/yyyy/mm/dd/誰それ</code> みたいな感じのカテゴリで日報を書いています。が、「あれ、昨日の日報何書いたっけ？」みたいに前後日の日報が見たくなることがありました。（日報を前日の記事のコピーから書いていて、リンクを消していない場合は多分そのリンクをたどればいいと思うのですが、私は消してしまっているので）
+というのが私以外にも社内に何人かいた（はず）ので、それを助けるようなesaの拡張を作りました。</p>
+
+<h2 id="どんな拡張か">どんな拡張か</h2>
+
+<p><a href="https://chrome.google.com/webstore/detail/yyyymmddesa/cjnieklajijeakoommahokclaegffdai">https://chrome.google.com/webstore/detail/yyyymmddesa/cjnieklajijeakoommahokclaegffdai</a></p>
+
+<p><code>yyyymmddesa</code> （やまだえさ）という名前です。私は <code>yyyymmdd</code> のことを（むかしtwitterか何かで見た）「やまだ形式」と呼んでいるので、そこから名前をつけています。</p>
+
+<p>リンク先見るといきなりバージョンが 0.2.1 ですが、これは0.1.0系をリンク限定公開（リンクを知っている人だけが見れる）ようにして社内にだけURLを展開していたからです。とりあえず動くものをやっつけで作り、ちゃんと作り直したら一般公開しよう&hellip;と思っていたら半年以上かかってしまいました :innocent:</p>
+
+<p>この拡張は何をするかというと、esaで <code>yyyy/mm/dd</code> を含むカテゴリの記事を開いた時、その記事を作った人のそれより前の日付の記事と、それより後の日付で存在する記事のリンクを表示します。たとえば <code>日報/2018/11/11/hyoshihara04</code> ,  <code>日報/2018/11/12/hyoshihara04</code> ,  <code>日報/2018/11/13/hyoshihara04</code> というカテゴリの記事があった時、  <code>日報/2018/11/12/hyoshihara04</code> の記事を開くと 11/11の記事と11/13の記事のリンクが表示されます。ちょうど下の画像のような感じです。</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2018/12/16/144/1e33379f-fc53-4503-8677-599ca7c1e016.png" alt="image.png (110.0 kB)" /></p>
+
+<p>なお、前後の日付は連続していなくてもリンクは表示されます。例えば 11/12の次の記事が12/01とかであっても問題ないようにしています（正確には前後2ヶ月間以内であれば表示されます）</p>
+
+<h2 id="使い方">使い方</h2>
+
+<ol>
+<li>esaを開いて、 <code>Settings</code> &gt; <code>Applications</code> を開き、 <code>Personal access tokens</code> でtokenを作成する（read権限だけで問題ないです）</li>
+<li>拡張をインストール</li>
+<li>オプションページを開く</li>
+<li><code>esa token</code> のところに先程作ったtokenを貼り付けてsave</li>
+</ol>
+
+<p>これで、該当する記事を開いて待つと、リンクが表示されるはずです。
+前後の記事はesaのAPIを使って取得しているのですが、前後2ヶ月分をまとめて取得して <code>chrome.storage</code> にキャッシュとして保存しているので、2回目以降はすぐに表示されます。もしキャッシュに該当する記事がなければ、APIで取得し直します。もし期待したリンクが出てこないなど挙動がおかしいところがあったら、オプションのページからキャッシュをクリアしてください。それでもだめならバグだと思うので <a href="https://github.com/yoshihara/yyyymmddesa/issues/new">issue登録</a> をお願いします。</p>
+
+<h2 id="今後の予定">今後の予定</h2>
+
+<p>オプションページがやっつけなのでなんとかしたいです。</p>
+
+<p>あとesa tokenは、もし可能ならesaのOAuthの仕組みを使ってみたいなと思っています。</p>
+
+<h2 id="実装について">実装について</h2>
+
+<ul>
+<li>記事のIDはURL、カテゴリと作成者は記事ページのDOMから取得しています
+
+<ul>
+<li>IDを取得したら、カテゴリなどはAPIで記事の情報を取得する方法と（今も）ちょっと迷っています</li>
+<li>今のやり方にしているのは、画面に見えているのをそのまま使ったほうがAPIのリクエスト減らせて結果として動作も速いからです</li>
+<li>ただ、これだとUIの変更に弱いので硬い方にしたい気持ちもあります</li>
+</ul></li>
+<li>0.1.0系だともうちょっと細かめに記事を取得したりキャッシュを保存したりしていたのですが、色々細かい場合に対応しにくかった（そしてテストが大変だった）ので、0.2.0系では「今見ている記事の月の前後2ヶ月分」とざっくり取得するようにしました
+
+<ul>
+<li>カテゴリの日付と記事作成日が比例するわけではない（「昨日の日報書き忘れてた」などのパターンがあるので）ため、カテゴリの日付を取得したら前後2ヶ月を計算してOR検索で引っ張ってきてます</li>
+<li>例えば <code>in:日報/2018/08/ user:hyoshihara04</code>  という検索クエリをORでつないで発行してます</li>
+</ul></li>
+<li>jestでなるべくテストを書いたのですがまだ慣れない&hellip;
+
+<ul>
+<li>ついrspecの勢いで書いてしまってスコープとかでよく混乱しました</li>
+<li>あとモックの貼り方とかのベストプラクティスがよくわかってないので手探りで書いています（テストはできてるはずなのでいいのですが、もっと良い書き方があったらそちらに倣いたい）</li>
+</ul></li>
+<li><code>innerText</code> じゃなくて <code>textContent</code> を使おうと思いつつつい癖で <code>innerText</code> を書いてしまう&hellip;
+
+<ul>
+<li>ちなみにjestでは <code>innerText</code> は <code>undefined</code> になる（<a href="https://github.com/jsdom/jsdom/issues/1245">参考</a>）のを知らなくてちょっとハマりました</li>
+</ul></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-right">
+    
+    <div class="addthis_inline_share_toolbox"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://github.com/yoshihara">yoshihara</a> 2017-2018</p>
+    
+    <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
+    
+  </div>
+</section>
+
+
+
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a4ac93ed1b0ded1"></script>
+
+</body>
+</html>
+
