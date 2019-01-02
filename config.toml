@@ -10,8 +10,8 @@ enableRobotsTXT = true
 # Number of posts per page
 Paginate = 5
 
-# [params.assets]
-# customCSS = ["css/custom.css"]
+[params.assets]
+customCSS = ["css/custom.css"]
 
 [params.info]
 adsense = "" # Adsense ID (ID only, without ca-pub-)
