@@ -188,7 +188,9 @@ $ yay -S avrdude
 $ downgrade avr-gcc
 </code></pre>
 
-<p>で <code>avr-gcc-8.1.0-1-x86_64.pkg.tar.xz</code> にダウングレードしました。</p>
+<p>で <code>avr-gcc-8.1.0-1-x86_64</code> にダウングレードしました。</p>
+
+<p>（しかし、今確認したところ、 <code>./util/qmk_install.sh</code> で <code>avr-gcc</code>8.1.0-1-x86_64` をインストールしてるように見えるので、試行錯誤中にアップデートしてたのかもです。。）</p>
 
 <p>その後、次のコマンドで再ビルドからの書き込みをやってみたところ無事に成功し、キースイッチを押したら反応するようになりました。</p>
 
