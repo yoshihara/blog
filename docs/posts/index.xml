@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy; &lt;a href=&#34;https://github.com/yoshihara&#34;&gt;yoshihara&lt;/a&gt; 2017-2018</copyright>
-    <lastBuildDate>Sun, 16 Dec 2018 22:40:49 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jan 2019 22:13:04 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.bomberowl.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ergo42 towel組み立てたときのメモ</title>
+      <link>https://blog.bomberowl.org/posts/442/</link>
+      <pubDate>Wed, 02 Jan 2019 22:13:04 +0900</pubDate>
+      
+      <guid>https://blog.bomberowl.org/posts/442/</guid>
+      <description>はんだごてとか触ったのいつぶりかわからないぐらいですが、いっかい作ってみたかったので。 （ホームポジションぐらい違うキーキャップにすればよかっ</description>
+    </item>
     
     <item>
       <title>esaで日報カテゴリとかで前後の日にちの記事を見やすくするchrome拡張を作った</title>
