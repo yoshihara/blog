@@ -78,7 +78,7 @@
 <p><a href="https://booth.pm/ja/items/952695">https://booth.pm/ja/items/952695</a> のフルセット透明を買ってからしばらく経ってしまっていたのですが、年末から年始にかけて組み立ててみました。
 ほぼ他の方のビルドログを見て作った感じなので、その参考にしたサイトや自分でメモしてた部分などと、ファームウェア書き込みではまったところをメモします。</p>
 
-<p>なお、セットに入っていない部品のうち、キースイッチは遊舎工房さんで <a href="https://yushakobo.jp/shop/a02te/">R11 Tiffany Blue Tealios</a>、 キーキャップは pimpmykeyboard で <a href="https://pimpmykeyboard.com/dsa-1-space-pack-of-10/">DSA 1 SPACE (PACK OF 10)</a>のBCTを買いました。</p>
+<p>なお、セットに入っていない部品のうち、キースイッチは遊舎工房さんで <a href="https://yushakobo.jp/shop/a02te/">R11 Tiffany Blue Tealios</a>、 キーキャップは pimpmykeyboard で <a href="https://pimpmykeyboard.com/dsa-1-space-pack-of-10/">DSA 1 SPACE (PACK OF 10)</a>のBCTを買いました。もともとkinesis advantage2（確か赤軸）を会社で使っていたのですが、打ち心地は同じぐらいか今回使った軸のほうがちょっと軽いかも？　という所感でした。kinesisは今まで使ったキーボードの中で一番打ちやすかったんですがいかんせん大きいんですよね&hellip;。</p>
 
 <h2 id="参考にしたサイト">参考にしたサイト</h2>
 
@@ -189,6 +189,7 @@ $ yay -S avrdude
 <p>で、どうやら8.1.0まで <code>avr-gcc</code> のバージョンをダウングレードしたらよさそうだったので、以下のような作業をしました。</p>
 
 <pre><code class="language-console">$ yay -S downgrade # パッケージをダウングレードするためのライブラリ（ https://syossan.hateblo.jp/entry/2018/09/16/031703 ）
+$ downgrade gcc 
 $ downgrade avr-gcc
 </code></pre>
 
