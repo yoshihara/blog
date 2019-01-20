@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    <title>Gherkinビルドログ | hyoshi(hara) log</title>
+    
+    <meta property='og:title' content='Gherkinビルドログ - hyoshi(hara) log'>
+<meta property='og:description' content='TALP KEYBOARDさんでキットが売っていたので、iPadに繋ぐ持ち運びキーボードが欲しいなと思って作ってみました。一応Mac&amp;iPa'>
+<meta property='og:url' content='https://blog.bomberowl.org/posts/444/'>
+<meta property='og:site_name' content='hyoshi(hara) log'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2019-01-20T16:24:05&#43;09:00'/><meta property='article:modified_time' content='2019-01-20T16:24:05&#43;09:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@hyoshihara04'><meta name='twitter:creator' content='@hyoshihara04'>
+    
+    <link rel="stylesheet" href="/css/style.css"/><link rel='stylesheet' href='https://blog.bomberowl.org/css/custom.css'><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.bomberowl.org">
+          <h1 class="title is-4">hyoshi(hara) log</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/yoshihara'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="twitter" href='https://twitter.com/hyoshihara04'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+    </div>
+    <h2 class="subtitle is-6">January 20, 2019</h2>
+    <h1 class="title">Gherkinビルドログ</h1>
+    
+    <div class="content">
+      
+
+<p><a href="https://talpkeyboard.stores.jp/items/5bea49b8626c842b0a0001f7">TALP KEYBOARDさんでキットが売っていた</a>ので、iPadに繋ぐ持ち運びキーボードが欲しいなと思って作ってみました。一応Mac&amp;iPadでキー入力できるところまでは確認できています。</p>
+
+<p>ちなみにキーボード作成としては、多分技術書展で買った2*4のもの（名前失念）→<a href="https://tanoshii-life.booth.pm/items/952695">Ergo42 towel</a>→<a href="https://tanoshii-life.booth.pm/items/841028">Meishi</a>→今回のGherkinで四つ目です。はんだ付けもかなり久々だったので、Ergo42 towelつくる前に動画見て勉強したりしたレベルです。</p>
+
+<h2 id="やってないこと">やってないこと</h2>
+
+<ul>
+<li>LED取り付け</li>
+<li>ファームウェアカスタマイズ（書き込みはやった）</li>
+</ul>
+
+<h2 id="キット以外に買った材料">キット以外に買った材料</h2>
+
+<ul>
+<li>キースイッチ：<a href="https://yushakobo.jp/shop/a02az/">Aliaz Silent スイッチ</a>（遊舎工房さん）</li>
+<li>キーキャップ：<a href="https://talpkeyboard.stores.jp/items/5b6e9bc6a6e6ee68d2005e6e">DSA Keycap Set (26Key/White)</a>（TALP KEYBOARDさん）
+
+<ul>
+<li>これだけだと4キー足りないので<a href="https://blog.bomberowl.org/posts/442/">前回Ergo42 towel作った</a>ときの余りも使用</li>
+</ul></li>
+<li>通信できる（充電専用ではない）USBケーブル</li>
+</ul>
+
+<h2 id="使用した道具類">使用した道具類</h2>
+
+<ul>
+<li><a href="https://www.amazon.co.jp/gp/product/B001PR1KLK">はんだごて</a>
+
+<ul>
+<li><a href="https://www.amazon.co.jp/gp/product/B0036RW764">こて先</a></li>
+</ul></li>
+<li><a href="https://www.amazon.co.jp/gp/product/B0029LGAMA/">はんだ</a></li>
+<li><a href="https://www.amazon.co.jp/gp/product/B001UNTRTG">はんだ台</a></li>
+<li><a href="https://www.amazon.co.jp/gp/product/B0711B8DG9">ニッパ</a></li>
+<li><a href="https://www.amazon.co.jp/gp/product/B001PR1KPQ">はんだ吸い取り線</a></li>
+<li><a href="https://www.amazon.co.jp/gp/product/B008S0CFDE">テスター</a></li>
+<li>吸煙器（適当に自作したもの）
+
+<ul>
+<li><a href="https://www.amazon.co.jp/gp/product/B002TOK0QY">ファン</a>に換気扇用のフィルタを切ってくっつけただけ</li>
+</ul></li>
+<li>カッティングマット</li>
+<li>ラジオペンチ</li>
+</ul>
+
+<h2 id="組み立て">組み立て</h2>
+
+<p>キットを開封するとこんな感じでした。</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/d38c566a-db78-4c61-ac50-9385a3ab740d.jpg" alt="resize_IMG_20190116_161756.jpg (362.3 kB)" /></p>
+
+<h3 id="ダイオード取り付け">ダイオード取り付け</h3>
+
+<p>PCBはこんな感じでした。</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/b8d7b249-62fa-4335-8657-98f49f668577.jpg" alt="resize_IMG_20190118_132613.jpg (694.6 kB, orientation fixed)" /></p>
+
+<p>最初にダイオードのリード線を折り曲げてPCBに差し、はんだ付けします。リード線の折り曲げはラジオペンチでやりました。ダイオードの向きは、ダイオードの黒い線がある方がPCBで二重線になっている方になるようにします。（写真参照）</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/17fb3cbb-8d9e-4889-8a06-16f1e1eaef64.jpg" alt="resize_IMG_20190118_141450.jpg (468.3 kB, orientation fixed)" /></p>
+
+<p>（今見ると一つピンが長くなってしまって無理矢理押しつぶしてるのがよくわかる……。）</p>
+
+<h3 id="ダイオード導通確認">ダイオード導通確認</h3>
+
+<p>（※手探りでやったので間違ってるかも）</p>
+
+<p>うまくはんだ付けできてるか調べるために導通確認をしました。</p>
+
+<p>まずダイオード単独の抵抗値をテスターで調べておきます（ダイオードの両端にテスターを当てればOK）その後、以下の写真で示した色のところにテスターを当て、さっき調べた抵抗値と同じ値が出ているかを確認します。もし出ない場合は、はんだ付けがちゃんとできているか確認します。</p>
+
+<h4 id="テスター赤を当てるところ">テスター赤を当てるところ</h4>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/68527ff5-e38d-489d-9927-383cb9d066ad.png" alt="image.png (2.3 MB)" /></p>
+
+<h4 id="テスター黒を当てるところ">テスター黒を当てるところ</h4>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/56d89f2e-fbc9-40fe-86eb-c2fc70d0a855.png" alt="image.png (2.2 MB)" /></p>
+
+<h3 id="ピンヘッダ取り付け">ピンヘッダ取り付け</h3>
+
+<p>ProMicroをPCBにつけるためのピンヘッダをはんだ付けします。GherkinだとProMicroはダイオード（やキーキャップ）とは反対の面にはんだ付けします。ただし、この段階でProMicroまではんだ付けしてしまうと、キースイッチの一部がはんだ付けできなくなるので注意（ちょっとやりそうになった）</p>
+
+<p>ピンヘッダとProMicroを写真のようにPCBにはめて、マスキングテープなどで固定します。ダイオードを付けた面とは逆になります。ProMicroつけずにピンヘッダをはんだ付けすると、後からProMicroを差すときに入れるのがかなり困難になります（前回やった）</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/0a6842c1-9712-4a7b-8ad2-3d0bab7131de.jpg" alt="resize_IMG_20190119_161938.jpg (246.0 kB)" /></p>
+
+<p>その後、裏返してPCBとピンヘッダをはんだ付けします。</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/ae5e5ebc-1437-41d5-81de-7fd210ca5bd6.jpg" alt="resize_IMG_20190119_162753.jpg (437.1 kB, orientation fixed)" /></p>
+
+<p>はんだ付けした後マスキングテープを剥がしてProMicroを取り外します。はんだからはみ出たピンは切らなくてもいいかもですが、ケースと接触してもアレなので念のためニッパで切りました。</p>
+
+<h3 id="キースイッチ取り付け">キースイッチ取り付け</h3>
+
+<p>念の為テスターを使ってキースイッチを一つ一つ導通確認しました。（念の為なのでやらなくてもよい）</p>
+
+<p>その後、キースイッチ - ケース（トップ用） - PCB（ダイオードと同じ面）となるようにキースイッチをはめます。ケースのアクリル保護シートはがすのにめちゃくちゃ苦戦した。</p>
+
+<p>表から見るとこんな感じ。</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/b8df0d88-ba71-4c5e-b9d5-eabe1c1be8ea.jpg" alt="resize_IMG_20190119_164330.jpg (638.8 kB)" /></p>
+
+<p>裏から見るとこんな感じに、全てのキースイッチのピンが出ていることを確認します。</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/fb35dba5-2f87-49cb-bade-0cae9f98eb25.jpg" alt="resize_IMG_20190119_164343.jpg (358.0 kB)" /></p>
+
+<p>ちゃんとキースイッチがはまってることが確認できたら、はんだ付けしていきます。ProMicroの裏側につけたキースイッチは、ProMicroに接触しそうだったのでピンをぎりぎりまで切り落としました。</p>
+
+<h3 id="promicro取り付け">ProMicro取り付け</h3>
+
+<p>ひっくり返してProMicroを付け直してはんだ付けします。この時、ProMicro反対側のキースイッチ真ん中のプラスチック部分がProMicroのUSBポート部分と接触するっぽく、盛大にProMicroが斜めになったのですが、実用的には問題ないはず……。</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/e87df9c8-6f5e-4fb2-aa08-e0da5911c008.png" alt="image.png (1.7 MB)" /></p>
+
+<p>ピンはケースと接触するのではんだぎりぎりで切り落とすのですが、この後のファームウェア書き込みをして問題ないかチェックしてからにすることにしました。</p>
+
+<h3 id="ファームウェア書き込み">ファームウェア書き込み</h3>
+
+<p>この段階でファームウェアを書き込んで動作を見ました。</p>
+
+<p>ファームウェアはQMKを使い、OSは Mac (Mojave 10.14.2) を使いました。QMK自体のセットアップはErgo42 towelに書き込んだときに完了していたのですが、最初からやるなら多分こんな感じになるはず。</p>
+
+<p>まず<a href="https://github.com/qmk/qmk_toolbox#macos">QMK toolbox</a>の記述を見て、必要なライブラリなどをhomebrewでインストールします。ただし、現状 <code>avr-gcc</code> のバージョンは最新の8系だと書き込みに失敗してしまうので、 <code>avr-gcc@7</code> としてインストールします。</p>
+
+<pre><code class="language-console">$ brew tap osx-cross/avr
+$ brew tap PX4/homebrew-px4
+$ brew update
+$ brew install avr-gcc@7
+$ brew install dfu-programmer
+$ brew install gcc-arm-none-eabi
+$ brew install avrdude
+</code></pre>
+
+<p>次に、ファームウェアのリポジトリをcloneします。</p>
+
+<pre><code class="language-console">$ git clone https://github.com/qmk/qmk_firmware.git
+$ cd qmk_firmware
+</code></pre>
+
+<p>clone後、キーボードをMacにつないでから、下記のコマンドを入力します。</p>
+
+<pre><code class="language-console">$ make 40percentclub/gherkin:default:avrdude
+</code></pre>
+
+<p>するとビルドが始まり、正常にビルドできると <code>Detecting USB port, reset your controller now........</code> という表示が出て <code>.</code> が断続的に表示されるようになります（ならなかったらエラーメッセージなどを頼りに直す）そうなったら、ProMicroで次の写真の位置（ <code>GND</code> とその隣の <code>RST</code> ）をショートさせてDFUに入ります。DFUに入るとUSB経由で書き込みできるようになります。DFUモードになると、ProMicroのLEDが赤も点灯するっぽい？（普段は緑だけ点灯している）</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/e35d0ebb-2aa0-44c8-a953-fb93153fffd0.png" alt="image.png (9.8 MB)" /></p>
+
+<p>なお、下記写真のところは今回ショートさせる箇所とつながっているらしく（参考文献3つ目を参照）、↑の代わりにここをショートさせてもよいようです。キットにはタクトスイッチも入っていたので、ここにタクトスイッチを差してスイッチを押してもよいはず。ダイオード取り付け後にタクトスイッチを差し込んで、PCBの <code>GND</code> と <code>RST</code> のところにテスターを当てて導通確認して導通していることは確認しました。</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/d3338965-65e8-4463-accb-d93c7c9ae6f0.png" alt="image.png (10.0 MB)" />
+※写真撮り忘れたのでピンヘッダ切った後の写真になってます</p>
+
+<p>DFUに入ると <code>Detected controller on USB port at /dev/tty.*</code> （ <code>*</code> の部分は環境依存）のように表示されて、書き込みが始まるはずです。書き込み終了までは↓のような感じに表示されました。</p>
+
+<pre><code>Connecting to programmer: .
+Found programmer: Id = &quot;CATERIN&quot;; type = S
+    Software Version = 1.0; No Hardware Version given.
+Programmer supports auto addr increment.
+Programmer supports buffered memory access with buffersize=128 bytes.
+
+Programmer supports the following devices:
+    Device code: 0x44
+
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9587 (probably m32u4)
+avrdude: NOTE: &quot;flash&quot; memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: reading input file &quot;.build/40percentclub_gherkin_default.hex&quot;
+avrdude: input file .build/40percentclub_gherkin_default.hex auto detected as Intel Hex
+avrdude: writing flash (17264 bytes):
+
+Writing | ################################################## | 100% 1.33s
+
+avrdude: 17264 bytes of flash written
+avrdude: verifying flash memory against .build/40percentclub_gherkin_default.hex:
+avrdude: load data flash data from input file .build/40percentclub_gherkin_default.hex:
+avrdude: input file .build/40percentclub_gherkin_default.hex auto detected as Intel Hex
+avrdude: input file .build/40percentclub_gherkin_default.hex contains 17264 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.15s
+
+avrdude: verifying ...
+avrdude: 17264 bytes of flash verified
+
+avrdude: safemode: Fuses OK (E:FB, H:D8, L:FF)
+
+avrdude done.  Thank you.
+</code></pre>
+
+<p>書き込みが終了すると、私の場合はMacのキーボード認識ウィザードが表示されました（どんな環境でも出るのかは謎）
+それをキャンセルしてから <code>Karabiner-Elements</code> の <code>Karabiner-EventViewer</code> を起動し、一つずつキーを押してキーコードが正しく送られているのを確認しました。ここはテキストエディタなりなんなり確認できればなんでもいいと思います。なお、デフォルトのキーマップはリポジトリの <a href="https://github.com/qmk/qmk_firmware/blob/b173c05cc25e9394c6e50081c1af707443950104/keyboards/40percentclub/gherkin/keymaps/default/keymap.c">keyboards/40percentclub/gherkin/keymaps/default/keymap.c</a> にあるのを参照しました。</p>
+
+<h3 id="ケース組み立て">ケース組み立て</h3>
+
+<p>動作が確認できたら、前述のとおりピンヘッダをぎりぎりで切り落とします。
+その後、ケース中間 - ケース中間 - ケースのボトムと合わせてボルトとナットで固定します。ただ全部固定すると、ファームウェア書き込みで行うショートができなくなるので、全部止めずに一箇所だけ止めておくほうがいいかもです。（次の写真はいったん全部止めて接触がないことを確認したときのものになります）</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/6d7c8669-009c-4c35-b40c-43389adeee16.jpg" alt="resize_IMG_20190119_181902-15.jpg (545.3 kB)" /></p>
+
+<p>いい感じにタクトスイッチが外に出せないかおいおい検討してみたい気もするけど、そんな頻繁に押すものでもないと思うのでどうなんだろう。USBポート側はこんな感じなので、ProMicroとケースの間からタクトスイッチを出せばなんとか……？（きびしそう）</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/8b4c43a1-3f48-47f0-bf0e-1fa619720f28.jpg" alt="resize_IMG_20190119_181902-16.jpg (211.4 kB)" /></p>
+
+<h3 id="キースイッチはめ">キースイッチはめ</h3>
+
+<p>最後にキースイッチをはめます。多分ファームウェアいじって配列変えるんですが、ひとまずデフォルトの配列ではめました。</p>
+
+<p><img src="https://img.esa.io/uploads/production/attachments/1303/2019/01/20/144/bd0f4742-7ab5-48da-87ef-2b44067d0e8b.png" alt="image.png (2.2 MB)" /></p>
+
+<p>キースイッチをはめおわったらゴム足つけて完成です。</p>
+
+<h2 id="作ってみて">作ってみて</h2>
+
+<p>だいたい5時間ぐらいでできました。はんだ付けするところ少ないと早い。
+あとキット届いた段階でも思いましたが、3*10かなり小さいです。なんというかかわいらしい。持ち運びは楽そうですが、キーマップはいまも悩んでいます。
+基本iPadでは日本語しか打たない予定なのでそれに特化してもいいかもしれない。</p>
+
+<h2 id="参考資料">参考資料</h2>
+
+<ul>
+<li><a href="http://romly.com/archives/2017/11/gherkin_assembly.html">http://romly.com/archives/2017/11/gherkin_assembly.html</a></li>
+<li><a href="http://romly.com/archives/2017/11/gherkin_firmware.html">http://romly.com/archives/2017/11/gherkin_firmware.html</a></li>
+<li><a href="http://www.40percent.club/2016/12/gherkin-assembly.html">http://www.40percent.club/2016/12/gherkin-assembly.html</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-right">
+    
+    <div class="addthis_inline_share_toolbox"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; <a href="https://github.com/yoshihara">yoshihara</a> 2017-2018</p>
+    
+    <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
+    
+  </div>
+</section>
+
+
+
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a4ac93ed1b0ded1"></script>
+
+</body>
+</html>
+
