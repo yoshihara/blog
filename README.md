@@ -23,9 +23,12 @@
 
 See circle.yml
 
-## Install
+## install
 
-See circle.yml
+1. install Go
+1. install Hugo
+1. clone this repository
+1. `git submodule update --init`
 
 ## build site
 
