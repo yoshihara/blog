@@ -3,8 +3,8 @@ languageCode = "ja"
 HasCJKLanguage = true
 title = "hyoshi(hara) log"
 theme = "kiss"
-copyright = "&copy; <a href=\"https://github.com/yoshihara\">yoshihara</a> 2017-2018"
-publishDir = "docs"
+copyright = "&copy; <a href=\"https://github.com/yoshihara\">yoshihara</a> 2017-2019"
+publishDir = "public"
 googleAnalytics = ""
 enableRobotsTXT = true
 # Number of posts per page
