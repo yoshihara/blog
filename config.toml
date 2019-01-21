@@ -3,7 +3,7 @@ languageCode = "ja"
 HasCJKLanguage = true
 title = "hyoshi(hara) log"
 theme = "kiss"
-copyright = "&copy; <a href=\"https://github.com/yoshihara\">yoshihara</a> 2017-2018"
+copyright = "&copy; <a href=\"https://github.com/yoshihara\">yoshihara</a> 2017-2019"
 publishDir = "docs"
 googleAnalytics = ""
 enableRobotsTXT = true
