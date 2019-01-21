@@ -12,7 +12,7 @@
 ## used Other Services
 
 - [esa.io](https://esa.io): create posts
-- [CircleCI](https://circleci.com): Deploy
+- [Netlify](https://www.netlify.com): Deploy
 
 ## dependency
 
