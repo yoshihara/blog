@@ -7,10 +7,7 @@
 
 ## used AWS Services
 
-- Amazon S3
-- CloudFront
 - Route53
-- Certificate Manager
 
 ## used Other Services
 
