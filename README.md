@@ -17,6 +17,7 @@
 ## dependency
 
 - [Hugo](http://gohugo.io/) v0.51
+    - [kiss (theme for Hugo)](https://github.com/ribice/kiss.git)
 
 ## deploy
 
