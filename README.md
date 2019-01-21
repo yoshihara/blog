@@ -29,11 +29,13 @@
 ## build site
 
 ```sh
+$ ./bin/format_esa_md_for_hugo.sh
 $ hugo
 ```
 
 ## for check in local
 
 ```sh
+$ ./bin/format_esa_md_for_hugo.sh
 $ hugo server -D
 ```
