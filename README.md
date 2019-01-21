@@ -16,7 +16,7 @@
 
 ## dependency
 
-- [Hugo](http://gohugo.io/) v0.37.1
+- [Hugo](http://gohugo.io/) v0.51
 
 ## deploy
 
